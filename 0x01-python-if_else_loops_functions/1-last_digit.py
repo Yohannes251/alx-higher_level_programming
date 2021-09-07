@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-numstr = str(number)
-num = int(numstr[len(numstr) - 1])
-string = "Last digit of {0} is {1} and is "
-_string = "Last digit of {0} is -{1} and is "
-if number < 0 and num != 0:
-    print(_string.format(number, num) + "less than 6 and not 0")
-elif num > 5:
-    print(string.format(number, num) + "greater than 5")
-elif num == 0:
-    print(string.format(number, num) + "0")
+if number >= 0:
+    last = number % 10
 else:
-    print(string.format(number, num) + "less than 6 and not 0")
+    last = (abs(number) % 10) * -1
+string = "Last digit of {0} is {1} and is "
+if number < 0 and last != 0:
+    print(string.format(number, last) + "less than 6 and not 0")
+elif last > 5:
+    print(string.format(number, last) + "greater than 5")
+elif last == 0:
+    print(string.format(number, last) + "0")
+else:
+    print(string.format(number, last) + "less than 6 and not 0")
