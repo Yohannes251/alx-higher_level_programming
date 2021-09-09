@@ -14,15 +14,15 @@ def main():
     else:
         a = int(sys.argv[1])
         b = int(sys.argv[3])
-        op = sys.argv[2]
-        if op == "+":
-            print("{:d} {:s} {:d} = {:d}".format(a, op, b, add(a, b)))
-        elif op == "-":
-            print("{:d} {:s} {:d} = {:d}".format(a, op, b, sub(a, b)))
-        elif op == "*" or op[0] == "*":
-            print("{:d} {:s} {:d} = {:d}".format(a, op, b, mul(a, b)))
-        elif op == "/":
-            print("{:d} {:s} {:d} = {:d}".format(a, op, b, div(a, b)))
+        operator = sys.argv[2]
+        if operator == "+":
+            print("{:d} {:s} {:d} = {:d}".format(a, operator, b, add(a, b)))
+        elif operator == "-":
+            print("{:d} {:s} {:d} = {:d}".format(a, operator, b, sub(a, b)))
+        elif operator == "*" or operator[0] == "*":
+            print("{:d} {:s} {:d} = {:d}".format(a, operator, b, mul(a, b)))
+        elif operator == "/":
+            print("{:d} {:s} {:d} = {:d}".format(a, operator, b, div(a, b)))
 
 
 if __name__ == "__main__":
