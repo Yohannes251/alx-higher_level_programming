@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 import calculator_1
 
 
 def main():
-    argc = len(sys.argv)
+    argc = len(argv)
     if argc != 4:
-        print("Usage: {:s} <a> <operator> <b>".format(sys.argv[0]))
-        sys.exit(1)
-    if sys.argv[2] not in ["+", "-", "*", "/"]:
+        print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
+        exit(1)
+    if argv[2] not in ["+", "-", "*", "/"]:
         print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
-    a = int(sys.argv[1])
-    b = int(sys.argv[3])
-    operator = sys.argv[2]
+        exit(1)
+    a = int(argv[1])
+    b = int(argv[3])
+    operator = argv[2]
     if operator == "+":
         result = calculator_1.add(a, b)
         print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
@@ -29,4 +29,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(argv)
