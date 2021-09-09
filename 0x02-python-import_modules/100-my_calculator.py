@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-import calculator_1
+from calculator_1 import add, sub, mul, div
 
 
 def main():
@@ -16,13 +16,13 @@ def main():
         b = int(sys.argv[3])
         op = sys.argv[2]
         if op == "+":
-            print("{} {} {} = {}".format(a, op, b, calculator_1.add(a, b)))
+            print("{} {} {} = {}".format(a, op, b, add(a, b)))
         elif op == "-":
-            print("{} {} {} = {}".format(a, op, b, calculator_1.sub(a, b)))
+            print("{} {} {} = {}".format(a, op, b, sub(a, b)))
         elif op == "*" or op[0] == "*":
-            print("{} {} {} = {}".format(a, op, b, calculator_1.mul(a, b)))
+            print("{} {} {} = {}".format(a, op, b, mul(a, b)))
         elif op == "/":
-            print("{} {} {} = {}".format(a, op, b, calculator_1.div(a, b)))
+            print("{} {} {} = {}".format(a, op, b, div(a, b)))
 
 
 if __name__ == "__main__":
