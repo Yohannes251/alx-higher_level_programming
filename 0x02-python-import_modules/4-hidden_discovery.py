@@ -7,7 +7,7 @@ def main():
     names.sort()
     for c in names:
         if c[:2] != "__":
-            print("{:s}".format(c))
+            print("{}".format(c))
 
 if __name__ == "__main__":
     main()
