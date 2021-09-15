@@ -2,20 +2,35 @@
 def roman_to_int(roman_string):
     if isinstance(roman_string, str) is False or roman_string is None:
         return 0
+    s = roman_string[:]
     roman_int = 0
-    for char in roman_string:
-        if char == 'I':
-            roman_int += 1
-        elif char == 'V':
+    i = 0
+    for i in range(0, len(s)):
+        if s[i] == 'I':
+            if i < len(s) - 1:
+                if s[i + 1] in ['V', 'X']:
+                    roman_int -= 1
+                else:
+                    roman_int += 1
+            else:
+                roman_int += 1
+        elif s[i] == 'V':
             roman_int += 5
-        elif char == 'X':
-            roman_int += 10
-        elif char == 'L':
+        elif s[i] == 'X':
+            if i < len(s) - 1:
+                if s[i + 1] in 'LMC':
+                    roman_int -= 10
+                else:
+                    roman_int += 10
+            else:
+                roman_int += 10
+        elif s[i] == 'L':
             roman_int += 50
-        elif char == 'C':
+        elif s[i] == 'C':
             roman_int += 100
-        elif char == 'D':
+        elif s[i] == 'D':
             roman_int += 500
-        elif char == 'M':
+        elif s[i] == 'M':
             roman_int += 1000
+        i += 1
     return roman_int
