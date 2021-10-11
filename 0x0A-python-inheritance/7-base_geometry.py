@@ -5,7 +5,7 @@ This module creates an empty class
 
 
 class BaseGeometry:
-    """Contains an area function"""
+    """Implements area and and integer validator functions"""
     def area(self):
         raise Exception("area() is not implemented")
 
