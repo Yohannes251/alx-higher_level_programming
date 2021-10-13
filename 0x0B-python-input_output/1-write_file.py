@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""write file"""
+"""
+This module creates a function that writes to a file
+"""
 
 
 def write_file(filename="", text=""):
-    """"write file"""
-    with open(filename, mode="w", encoding="utf-8") as fd:
-        fd.write(text)
-    return len(text)
+    """"Writes to a file a returns written characters"""
+    with open(filename, 'w', encoding="utf-8") as f:
+        return f.write(text)
