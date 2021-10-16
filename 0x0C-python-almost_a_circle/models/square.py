@@ -15,12 +15,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self._size
+        return self.__size
 
     @size.setter
     def size(self, value):
         super().validator("width", value, 1)
-        self._size = value
+        self.__size = value
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
@@ -48,3 +48,8 @@ class Square(Rectangle):
     def __str__(self):
         """Returns readable representation of object instance"""
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.size}'
+
+    def to_dictionary(self):
+        """Returns dictionary representation of Square"""
+        dicti = {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        return dicti
