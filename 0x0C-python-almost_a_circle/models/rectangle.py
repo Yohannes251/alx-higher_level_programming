@@ -37,7 +37,7 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    def height(self):
+    def height(self) -> 'height':
         return self.__height
 
     @height.setter
@@ -104,3 +104,9 @@ class Rectangle(Base):
                 self.x = kwargs['x']
             if 'y' in keys:
                 self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """Returns dictionary representation of the instance"""
+        dicti = {'x': self.x, 'y': self.y, 'id': self.id, 'height':
+                 self.height, 'width': self.width}
+        return dicti
