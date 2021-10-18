@@ -54,3 +54,13 @@ class Base:
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        try:
+            with open(cls.__name__ + ".json", "r") as f:
+                return [cls.create(**dictionary) for
+                        dictionary in cls.from_json_string(f.read())]
+        except FileNotFoundError:
+            return []
