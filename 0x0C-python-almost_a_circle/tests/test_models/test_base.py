@@ -83,5 +83,6 @@ class TestBase(unittest.TestCase):
         """Testing from_json_string   none string"""
         self.assertEqual([], Base.from_json_string(None))
 
+
 if __name__ == '__main__':
     unittest.main()
