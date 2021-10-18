@@ -43,7 +43,7 @@ class Square(Rectangle):
             if 'x' in keys:
                 self.x = kwargs['x']
             if 'y' in keys:
-                self.y = kwargs['y'] 
+                self.y = kwargs['y']
 
     def __str__(self):
         """Returns readable representation of object instance"""

@@ -5,7 +5,6 @@ This module contains a class called Base
 import json
 
 
-
 class Base:
     """Base class for upcoming classes"""
     __nb_objects = 0
@@ -47,10 +46,11 @@ class Base:
         else:
             json_list = (json.loads(json_string))
             return json_list
+
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance by processing a dictionary"""
         li = []
         dummy = cls(1, 1)
-        #dummy.update(**dictionary)
+        dummy.update(**dictionary)
         return dummy
