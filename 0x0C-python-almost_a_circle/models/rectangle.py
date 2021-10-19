@@ -19,13 +19,13 @@ class Rectangle(Base):
     def validator(self, name, value, attr_type):
         """Validates passed arguments"""
         if type(value) is not int:
-            raise TypeError(f'{name} must be an integer')
+            raise TypeError(name + ' must be an integer')
         if attr_type == 1:
             if value <= 0:
-                raise ValueError(f'{name} must be > 0')
+                raise ValueError(name + ' must be > 0')
         if attr_type == 2:
             if value < 0:
-                raise ValueError(f'{name} must be >= 0')
+                raise ValueError(name + ' must be >= 0')
 
     @property
     def width(self):
