@@ -52,8 +52,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance by processing a dictionary"""
-        li = []
-        dummy = cls(1, 1)
+        if cls.__name__ == 'Base':
+            return
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        elif cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 

@@ -11,16 +11,16 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes attributes"""
         self.size = size
-        super().__init__(self.size, self.size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
-        super().validator("width", value, 1)
-        self.__size = value
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
