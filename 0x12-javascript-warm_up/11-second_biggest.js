@@ -8,5 +8,5 @@ if (len <= 3) {
   array = process.argv;
   array.slice(2);
   array.sort();
-  console.log(array[len - 2]);
+  console.log(array[array.length - 2]);
 }
