@@ -8,7 +8,7 @@ module.exports = class Square extends SuperSquare {
       const i = this.width;
       let j = this.height;
       while (j > 0) {
-        console.log('C'.repeat(i));
+        console.log(c.repeat(i));
         j--;
       }
     } else {
