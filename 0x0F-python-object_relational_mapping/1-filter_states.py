@@ -11,7 +11,7 @@ if __name__ == '__main__':
                          password=argv[2], database=argv[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name REGEXP '^[N]' \
-                ORDER BY states.id")
+                ORDER BY states.id ASC")
     for row in cur.fetchall():
         print(row)
     cur.close()
