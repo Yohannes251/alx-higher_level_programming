@@ -12,7 +12,7 @@ if __name__ == '__main__':
                          password=argv[2], database=argv[3])
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name=(%s) \
-                ORDER BY states.id ASC".format(argv[4]))
+                ORDER BY states.id ASC", (argv[4],))
     for row in cur.fetchall():
         print(row)
     cur.close()
